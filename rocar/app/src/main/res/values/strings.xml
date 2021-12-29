@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Rocar</string>
+    <string name="consultar">consultar</string>
+    <string name="cadastrar">cadastrar</string>
+    <string name="favorites">favoritos</string>
+</resources>
