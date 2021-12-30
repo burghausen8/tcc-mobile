@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_query_client"
+    app:startDestination="@id/queryClientFragment">
+
+    <fragment
+        android:id="@+id/queryClientFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientFragment"
+        android:label="fragment_query_client"
+        tools:layout="@layout/fragment_query_client" >
+        <action
+            android:id="@+id/action_queryClientFragment_to_queryClientDetailFragment"
+            app:destination="@id/queryClientDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/queryClientDetailFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientDetailFragment"
+        android:label="fragment_coffee_detail"
+        tools:layout="@layout/fragment_query_client_detail" />
+
+</navigation>

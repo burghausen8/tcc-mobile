@@ -3,4 +3,8 @@
     <string name="consultar">consultar</string>
     <string name="cadastrar">cadastrar</string>
     <string name="favorites">favoritos</string>
+    <string name="veiculo">veiculo</string>
+    <string name="cliente">cliente</string>
+    <string name="txt_error_title">Opss, algo deu errado</string>
+    <string name="txt_error_subtitle">Tente novamente mais tarde</string>
 </resources>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityMainBinding
+import br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity
+import br.com.cwi.rocar.presentation.feature.initial.register.RegisterActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,13 +23,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpInitialActions() {
         binding.contentRegister.root.setOnClickListener {
-            //val intent = Intent(this, CoffeeHostActivity::class.java)
-           // startActivity(intent)
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
         binding.contentQuery.root.setOnClickListener {
-           // val intent = Intent(this, MachineHostActivity::class.java)
-           // startActivity(intent)
+            val intent = Intent(this, QueryActivity::class.java)
+            startActivity(intent)
         }
 
         binding.contentFavorites.root.setOnClickListener {

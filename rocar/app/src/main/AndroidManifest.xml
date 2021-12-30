@@ -6,13 +6,23 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
         android:name=".MainApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Rocar">
+        android:theme="@style/Theme.Rocar"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".presentation.feature.initial.query.client.QueryClientHostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.feature.initial.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.feature.initial.query.QueryActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.feature.initial.MainActivity"
             android:exported="true">
