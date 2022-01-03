@@ -5,13 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.domain.entity.Client
-import br.com.cwi.rocar.presentation.feature.initial.query.client.EXTRA_QUERY_CLIENT_ID
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class QueryClientFragment : Fragment() {
@@ -55,10 +53,8 @@ class QueryClientFragment : Fragment() {
 
     private fun navigateToCoffeeDetail(id: Int) {
         findNavController().navigate(
-            R.id.queryClientDetailFragment,
-            bundleOf(
-                Pair(EXTRA_QUERY_CLIENT_ID, id)
-            )
+            R.id.queryClientDetailFragment
         )
+        EXTRA_QUERY_CLIENT_ID = id
     }
 }

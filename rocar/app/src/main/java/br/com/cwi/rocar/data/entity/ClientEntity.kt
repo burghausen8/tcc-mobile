@@ -11,4 +11,5 @@ data class ClientEntity(
     val street: String?,
     val nHome: Int?,
     val city: String?,
+    val phone: String?
 )

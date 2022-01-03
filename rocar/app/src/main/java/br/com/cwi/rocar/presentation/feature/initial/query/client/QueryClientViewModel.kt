@@ -13,6 +13,16 @@ class QueryClientViewModel(
     private val _clients = MutableLiveData<List<Client>>()
     val clients: LiveData<List<Client>> = _clients
 
+    private val _clientsById = MutableLiveData<Client>()
+    val clientsById: LiveData<Client> = _clientsById
+
+
+     fun getClientById(id :Int ){
+         launch {
+             val list = clientRepository.getClientById(id)
+             _clientsById.postValue(list)
+         }
+    }
 
     fun fetchClients() {
         launch {

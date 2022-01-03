@@ -12,7 +12,8 @@ class ClientMapper: DomainMapper<ClientResponse, Client> {
         cpf = from.cpf,
         street = from.street,
         nHome = from.nHome,
-        city = from.city
+        city = from.city,
+        phone = from.phone,
     )
 
 

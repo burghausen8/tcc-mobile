@@ -5,18 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import br.com.cwi.nespresso_app.data.network.RocarApi
+import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.databinding.FragmentQueryClientDetailBinding
+import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.rocar.presentation.extension.toPhoneFormat
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-const val EXTRA_QUERY_CLIENT_ID = "EXTRA_QUERY_CLIENT_ID"
+ var EXTRA_QUERY_CLIENT_ID = 0
 
-class QueryClientDetailFragment : Fragment() {
+class QueryClientDetailFragment (): Fragment() {
 
     private lateinit var binding: FragmentQueryClientDetailBinding
 
-    private val coffeeId by lazy {
-        arguments?.getInt(EXTRA_QUERY_CLIENT_ID)
-    }
+    private val viewModel: QueryClientViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,9 +32,33 @@ class QueryClientDetailFragment : Fragment() {
         return binding.root
     }
 
+
+    private fun setupViewModel(id: Int) {
+        viewModel.clientsById.observe(viewLifecycleOwner) { client ->
+            binding.tvNameValue.text = client.name
+            binding.tvCpfValue.text = client.cpf
+            binding.tvStreetValue.text = client.street
+            binding.tvNumberValue.text = client.nHome.toString()
+            binding.tvCityValue.text = client.city
+            binding.tvPhoneValue.text = toPhoneFormat(client.phone)
+
+
+        }
+        viewModel.getClientById(EXTRA_QUERY_CLIENT_ID)
+
+
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvBatata.text = coffeeId.toString()
+
+        setupViewModel(1)
+
+
+
+
+
     }
 
 }

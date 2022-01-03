@@ -6,5 +6,7 @@ class Client(
     var cpf: String?,
     var street: String?,
     var nHome: Int?,
-    var city: String?
+    var city: String?,
+    var phone: String?,
+
 )

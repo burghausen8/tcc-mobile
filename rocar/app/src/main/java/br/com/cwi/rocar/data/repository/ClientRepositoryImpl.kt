@@ -20,4 +20,11 @@ class ClientRepositoryImpl(
         }
     }
 
+    override suspend fun getClientById(id: Int): Client{
+        return withContext(Dispatchers.IO) {
+            clientMapper.toDomain(api.getClientById(id))
+        }
+        }
+
+
 }
