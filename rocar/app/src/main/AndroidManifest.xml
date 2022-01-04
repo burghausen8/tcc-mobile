@@ -18,6 +18,9 @@
             android:name=".presentation.feature.initial.query.client.QueryClientHostActivity"
             android:exported="false" />
         <activity
+            android:name=".presentation.feature.initial.query.vehicle.QueryVehicleHostActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.feature.initial.register.RegisterActivity"
             android:exported="false" />
         <activity

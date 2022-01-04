@@ -7,4 +7,5 @@
     <string name="cliente">cliente</string>
     <string name="txt_error_title">Opss, algo deu errado</string>
     <string name="txt_error_subtitle">Tente novamente mais tarde</string>
+    <string name="pesquisar">pesquisar</string>
 </resources>

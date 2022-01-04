@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.feature.initial.query.vehicle.QueryVehicleDetailFragment">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Dados do Veiculo"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Marca/Modelo"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_model_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_year"
+        app:layout_constraintTop_toBottomOf="@id/tv_vehicle" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_model_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_board"
+        app:layout_constraintStart_toStartOf="@id/tv_model"
+        app:layout_constraintEnd_toEndOf="@id/tv_model"
+        app:layout_constraintTop_toBottomOf="@id/tv_model" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Ano"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_year_value"
+        app:layout_constraintStart_toEndOf="@id/tv_model"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vehicle" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_year_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_color"
+        app:layout_constraintStart_toStartOf="@id/tv_year"
+        app:layout_constraintTop_toBottomOf="@id/tv_year"
+        app:layout_constraintEnd_toEndOf="@id/tv_year"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_board"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Placa"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_board_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_model_value" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_board_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintStart_toStartOf="@id/tv_board"
+        app:layout_constraintEnd_toEndOf="@id/tv_board"
+        app:layout_constraintTop_toBottomOf="@id/tv_board" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Cor"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_color_value"
+        app:layout_constraintStart_toEndOf="@id/tv_board"
+        app:layout_constraintTop_toBottomOf="@id/tv_year_value"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_color_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintStart_toStartOf="@id/tv_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_color"
+        app:layout_constraintEnd_toEndOf="@id/tv_color"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Dados do Cliente"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_board_value" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Nome "
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_name_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_client" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginStart="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_cpf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="CPF/CNPJ "
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_cpf_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_value" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_cpf_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_marginStart="5sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_cpf" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Endereço"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_street"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_cpf_value" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Rua: "
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_number"
+        app:layout_constraintEnd_toStartOf="@id/tv_street_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_street_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@id/tv_street"
+        app:layout_constraintTop_toTopOf="@id/tv_street"
+        app:layout_constraintBottom_toBottomOf="@id/tv_street"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Nº: "
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_city"
+        app:layout_constraintEnd_toStartOf="@id/tv_number_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_street" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_number_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@id/tv_number"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintTop_toTopOf="@id/tv_number" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="Cidade: "
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_number" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_city_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@id/tv_city"
+        app:layout_constraintTop_toTopOf="@id/tv_city"
+        app:layout_constraintBottom_toBottomOf="@id/tv_city" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:paddingTop="5dp"
+        android:text="Telefone "
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_city" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_phone_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_batata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

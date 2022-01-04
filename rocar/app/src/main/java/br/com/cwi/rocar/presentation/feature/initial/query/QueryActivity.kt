@@ -7,6 +7,7 @@ import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityQueryBinding
 import br.com.cwi.rocar.databinding.ActivityRegisterBinding
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientHostActivity
+import br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleHostActivity
 
 class QueryActivity : AppCompatActivity() {
 
@@ -27,8 +28,8 @@ class QueryActivity : AppCompatActivity() {
         }
 
         binding.contentVehicle.root.setOnClickListener {
-            //  val intent = Intent(this, QueryActivity::class.java)
-            //  startActivity(intent)
+              val intent = Intent(this, QueryVehicleHostActivity::class.java)
+              startActivity(intent)
         }
 
     }

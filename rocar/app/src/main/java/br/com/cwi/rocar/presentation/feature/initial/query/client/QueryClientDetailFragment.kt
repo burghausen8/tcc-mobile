@@ -33,7 +33,7 @@ class QueryClientDetailFragment (): Fragment() {
     }
 
 
-    private fun setupViewModel(id: Int) {
+    private fun setupViewModel() {
         viewModel.clientsById.observe(viewLifecycleOwner) { client ->
             binding.tvNameValue.text = client.name
             binding.tvCpfValue.text = client.cpf
@@ -53,7 +53,7 @@ class QueryClientDetailFragment (): Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupViewModel(1)
+        setupViewModel()
 
 
 

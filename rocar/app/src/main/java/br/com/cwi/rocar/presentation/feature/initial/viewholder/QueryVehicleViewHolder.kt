@@ -4,24 +4,26 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.databinding.ItemQueryClientBinding
+import br.com.cwi.rocar.databinding.ItemQueryVehicleBinding
 import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientFragment
 
-class QueryClientViewHolder(
+class QueryVehicleViewHolder(
     itemView: View,
-    private val onClientClick: (Client) -> Unit
+    private val onVehicleClick: (Vehicle) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
-    private val tvname = ItemQueryClientBinding.bind(itemView).tvName
-    private val tvstreet = ItemQueryClientBinding.bind(itemView).tvStreet
+    private val tvmodel = ItemQueryVehicleBinding.bind(itemView).tvModel
+    private val tvboard = ItemQueryVehicleBinding.bind(itemView).tvBoard
 
 
 
-    fun bind(item: Client) {
-        tvname.text = item.name
-        tvstreet.text = (item.street + ", " + item.nHome)
+    fun bind(vehicle: Vehicle) {
+        tvmodel.text = (vehicle.brand + "/" + vehicle.model)
+        tvboard.text = (vehicle.board)
 
         itemView.setOnClickListener {
-            onClientClick(item)
+            onVehicleClick(vehicle)
         }
 
 

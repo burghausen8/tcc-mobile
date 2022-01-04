@@ -1,5 +1,6 @@
 package br.com.cwi.rocar.presentation.feature.initial.query.client
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,12 +25,15 @@ class QueryClientFragment : Fragment() {
     ): View {
         binding = FragmentQueryClientBinding.inflate(layoutInflater)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
+
     }
 
     private fun setupViewModel() {
@@ -39,19 +43,32 @@ class QueryClientFragment : Fragment() {
         viewModel.fetchClients()
     }
 
+
     private fun setUpClientRecyclerView(list: List<Client>) {
-        binding.rvCaps.apply {
+
+        binding.contentSearch.root.setOnClickListener {
+            viewModel.clients.observe(viewLifecycleOwner) { listOriginal ->
+                var filter = binding.etSearch.text
+                var newList = listOriginal.filter {client -> client.name.contains(filter.toString())}
+                setUpClientRecyclerView(newList)
+            }
+
+        }
+
+        binding.rvClients.apply {
             addItemDecoration(
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             )
             adapter = QueryClientAdapter(list,
             onClientClick = {
-                navigateToCoffeeDetail(it.id)
+                navigateToClientDetail(it.id)
             })
         }
+
+
     }
 
-    private fun navigateToCoffeeDetail(id: Int) {
+    private fun navigateToClientDetail(id: Int) {
         findNavController().navigate(
             R.id.queryClientDetailFragment
         )
