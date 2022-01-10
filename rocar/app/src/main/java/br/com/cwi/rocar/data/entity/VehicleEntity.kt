@@ -8,7 +8,7 @@ data class VehicleEntity(
     @PrimaryKey val id: Int,
     val idProp: Int,
     val brand: String?,
-    val model: String?,
+    val model: String,
     val year: Int?,
     val board: String,
     val color: String?

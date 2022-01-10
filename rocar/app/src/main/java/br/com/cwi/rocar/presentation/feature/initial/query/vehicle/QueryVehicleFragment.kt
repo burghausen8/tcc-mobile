@@ -48,7 +48,7 @@ class QueryVehicleFragment : Fragment() {
         binding.contentSearch.root.setOnClickListener {
             viewModel.vehicle.observe(viewLifecycleOwner) { listOriginal ->
                 var filter = binding.etSearch.text
-                var newList = listOriginal.filter {vehicle -> vehicle.board.contains(filter.toString())}
+                var newList = listOriginal.filter {vehicle -> vehicle.board.contains(filter.toString()) || vehicle.model.contains(filter.toString()) }
                 setUpVehicleRecyclerView(newList)
             }
 

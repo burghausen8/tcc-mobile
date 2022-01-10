@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.feature.initial.query.client.QueryClientFragment">
+    tools:context=".presentation.feature.initial.register.vehicle.RegisterVehicleFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_clients"
@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/content_search"
-        app:layout_constraintTop_toBottomOf="@id/rv_clients"/>
+        app:layout_constraintTop_toBottomOf="@id/rv_clients"></androidx.appcompat.widget.AppCompatEditText>
 
     <include
         android:id="@+id/content_search"

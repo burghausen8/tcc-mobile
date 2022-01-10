@@ -24,9 +24,9 @@
         android:id="@+id/tv_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5sp"
         android:text="Marca/Modelo"
         android:textSize="15dp"
+        android:layout_margin="5sp"
         app:layout_constraintBottom_toTopOf="@id/tv_model_value"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tv_year"
@@ -38,7 +38,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5sp"
-        android:layout_marginStart="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@id/tv_board"
@@ -95,7 +94,7 @@
         android:layout_marginStart="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintBottom_toTopOf="@id/tv_client"
         app:layout_constraintStart_toStartOf="@id/tv_board"
         app:layout_constraintEnd_toEndOf="@id/tv_board"
         app:layout_constraintTop_toBottomOf="@id/tv_board" />
@@ -122,7 +121,7 @@
         android:layout_marginStart="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_name"
+        app:layout_constraintBottom_toTopOf="@id/tv_client"
         app:layout_constraintStart_toStartOf="@id/tv_color"
         app:layout_constraintTop_toBottomOf="@id/tv_color"
         app:layout_constraintEnd_toEndOf="@id/tv_color"/>
@@ -133,7 +132,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:text="Dados do Cliente"
+        android:paddingTop="15sp"
+        android:text="Dados do Proprietario"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@id/tv_name"
         app:layout_constraintStart_toStartOf="parent"
@@ -285,12 +285,5 @@
         android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_phone" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_batata"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@ import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityMainBinding
 import br.com.cwi.rocar.databinding.ActivityRegisterBinding
 import br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity
+import br.com.cwi.rocar.presentation.feature.initial.register.client.RegisterClientActivity
+import br.com.cwi.rocar.presentation.feature.initial.register.vehicle.RegisterVehicleHostActivity
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -22,13 +24,13 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun setUpRegisterActions() {
         binding.contentClient.root.setOnClickListener {
-            //val intent = Intent(this, RegisterActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, RegisterClientActivity::class.java)
+            startActivity(intent)
         }
 
         binding.contentVehicle.root.setOnClickListener {
-          //  val intent = Intent(this, QueryActivity::class.java)
-          //  startActivity(intent)
+            val intent = Intent(this, RegisterVehicleHostActivity::class.java)
+            startActivity(intent)
         }
 
     }

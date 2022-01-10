@@ -7,7 +7,7 @@ class ClientResponse(
     @Json(name = "nome") val name: String,
     @Json(name = "cpf") val cpf: String?,
     @Json(name = "rua") val street: String?,
-    @Json(name = "nCasa") val nHome: Int?,
+    @Json(name = "nCasa") val nHome: String?,
     @Json(name = "cidade") val city: String?,
     @Json(name = "telefone") val phone: String?,
 

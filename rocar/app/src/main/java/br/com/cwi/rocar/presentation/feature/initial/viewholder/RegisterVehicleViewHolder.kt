@@ -1,22 +1,19 @@
 package br.com.cwi.rocar.presentation.feature.initial.viewholder
 
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.databinding.ItemQueryClientBinding
 import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientFragment
 
-class QueryClientViewHolder(
+class RegisterVehicleViewHolder(
     itemView: View,
-    private val onClientClick: (Client) -> Unit,
-    private val onFavoriteClick: (Client) -> Unit
+    private val onClientClick: (Client) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
     private val tvname = ItemQueryClientBinding.bind(itemView).tvName
     private val tvstreet = ItemQueryClientBinding.bind(itemView).tvStreet
-    private val ivFavorite = ItemQueryClientBinding.bind(itemView).ivFavorite
+
 
 
     fun bind(item: Client) {
@@ -27,23 +24,8 @@ class QueryClientViewHolder(
             onClientClick(item)
         }
 
-        with(ivFavorite) {
-            setImageDrawable(getFavoriteIcon(item))
-            setOnClickListener {
-                item.isFavorite = !item.isFavorite
-                setImageDrawable(getFavoriteIcon(item))
-                onFavoriteClick(item)
-            }
-        }
-
 
     }
-
-    private fun getFavoriteIcon(client: Client) = ContextCompat.getDrawable(
-        itemView.context,
-        if (client.isFavorite) R.drawable.ic_favorite_filled
-        else R.drawable.ic_favorite_rounded
-    )
 
 
 }

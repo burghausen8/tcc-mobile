@@ -1,4 +1,4 @@
-package br.com.cwi.rocar.presentation.feature.initial.query.client
+package br.com.cwi.rocar.presentation.feature.favorites
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,13 +11,15 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientAdapter
+import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class QueryClientFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
     private lateinit var binding: FragmentQueryClientBinding
 
-    private val viewModel: QueryClientViewModel by sharedViewModel()
+    private val viewModel: FavoriteViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

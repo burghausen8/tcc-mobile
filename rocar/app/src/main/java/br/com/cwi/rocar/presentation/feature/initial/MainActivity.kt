@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityMainBinding
+import br.com.cwi.rocar.presentation.feature.favorites.FavoriteHostActivity
 import br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity
 import br.com.cwi.rocar.presentation.feature.initial.register.RegisterActivity
 
@@ -33,8 +34,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.contentFavorites.root.setOnClickListener {
-           // val intent = Intent(this, AccessoryHostActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, FavoriteHostActivity::class.java)
+            startActivity(intent)
+
+
         }
     }
 }

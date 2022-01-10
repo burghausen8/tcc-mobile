@@ -1,4 +1,4 @@
-package br.com.cwi.rocar.presentation.feature.initial.query.client
+package br.com.cwi.rocar.presentation.feature.initial.register.vehicle
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,20 +10,21 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
+import br.com.cwi.rocar.databinding.FragmentRegisterVehicleBinding
 import br.com.cwi.rocar.domain.entity.Client
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class QueryClientFragment : Fragment() {
+class RegisterVehicleFragment : Fragment() {
 
-    private lateinit var binding: FragmentQueryClientBinding
+    private lateinit var binding: FragmentRegisterVehicleBinding
 
-    private val viewModel: QueryClientViewModel by sharedViewModel()
+    private val viewModel: RegisterVehicleViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentQueryClientBinding.inflate(layoutInflater)
+        binding = FragmentRegisterVehicleBinding.inflate(layoutInflater)
         return binding.root
 
 
@@ -59,11 +60,10 @@ class QueryClientFragment : Fragment() {
             addItemDecoration(
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             )
-            adapter = QueryClientAdapter(list,
+            adapter = RegisterVehicletAdapter(list,
             onClientClick = {
                 navigateToClientDetail(it.id)
-            },onFavoriteClick = {
-                    viewModel.setFavorite(it)})
+            })
         }
 
 
@@ -71,8 +71,8 @@ class QueryClientFragment : Fragment() {
 
     private fun navigateToClientDetail(id: Int) {
         findNavController().navigate(
-            R.id.queryClientDetailFragment
+            R.id.registerVehicleDetailFragment
         )
-        EXTRA_QUERY_CLIENT_ID = id
+        EXTRA_REGISTER_VEHICLE_ID = id
     }
 }

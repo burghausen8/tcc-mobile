@@ -1,45 +1,41 @@
-package br.com.cwi.rocar.presentation.feature.initial.query.vehicle
+package br.com.cwi.rocar.presentation.feature.favorites
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.cwi.rocar.databinding.FragmentQueryVehicleDetailBinding
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import br.com.cwi.nespresso_app.data.network.RocarApi
+import br.com.cwi.rocar.R
+import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
+import br.com.cwi.rocar.databinding.FragmentQueryClientDetailBinding
+import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.extension.toPhoneFormat
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
- var EXTRA_QUERY_VEHICLE_ID = 0
+ var EXTRA_QUERY_CLIENT_ID = 0
 
-class QueryVehicleDetailFragment (): Fragment() {
+class FavoriteDetailFragment (): Fragment() {
 
-    private lateinit var binding: FragmentQueryVehicleDetailBinding
+    private lateinit var binding: FragmentQueryClientDetailBinding
 
-    private val viewModelVehicle: QueryVehicleViewModel by sharedViewModel()
-
-    private val viewModelClient: QueryClientViewModel by sharedViewModel()
+    private val viewModel: FavoriteViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentQueryVehicleDetailBinding.inflate(layoutInflater)
+        binding = FragmentQueryClientDetailBinding.inflate(layoutInflater)
         return binding.root
     }
 
 
     private fun setupViewModel() {
-        viewModelVehicle.vehiclesById.observe(viewLifecycleOwner) { vehicle ->
-            binding.tvModelValue.text = (vehicle.brand + "/" + vehicle.model)
-            binding.tvYearValue.text = vehicle.year.toString()
-            binding.tvBoardValue.text = vehicle.board
-            binding.tvColorValue.text = vehicle.color
-
-            viewModelClient.getClientById(vehicle.idProp)
-        }
-
-        viewModelClient.clientsById.observe(viewLifecycleOwner) { client ->
+        viewModel.clientsById.observe(viewLifecycleOwner) { client ->
             binding.tvNameValue.text = client.name
             binding.tvCpfValue.text = client.cpf
             binding.tvStreetValue.text = client.street
@@ -49,8 +45,7 @@ class QueryVehicleDetailFragment (): Fragment() {
 
 
         }
-        viewModelVehicle.getVehicleById(EXTRA_QUERY_VEHICLE_ID)
-
+        viewModel.getClientById(EXTRA_QUERY_CLIENT_ID)
 
 
     }

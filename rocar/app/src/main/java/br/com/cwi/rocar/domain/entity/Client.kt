@@ -5,8 +5,9 @@ class Client(
     var name: String,
     var cpf: String?,
     var street: String?,
-    var nHome: Int?,
+    var nHome: String?,
     var city: String?,
     var phone: String?,
+    var isFavorite: Boolean = false
 
 )

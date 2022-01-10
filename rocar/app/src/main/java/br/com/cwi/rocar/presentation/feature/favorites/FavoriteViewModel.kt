@@ -1,16 +1,18 @@
-package br.com.cwi.rocar.presentation.feature.initial.query.client
+package br.com.cwi.rocar.presentation.feature.favorites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import br.com.cwi.nespresso_app.data.database.entity.ClientEntity
+import br.com.cwi.rocar.data.database.mapper.toClient
 import br.com.cwi.rocar.data.database.mapper.toEntity
 import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.domain.repository.ClientLocalRepository
 import br.com.cwi.rocar.domain.repository.ClientRepository
 import br.com.cwi.rocar.presentation.base.BaseViewModel
 
-class QueryClientViewModel(
+class FavoriteViewModel(
+    private val clientLocalRepository: ClientLocalRepository,
     private val clientRepository: ClientRepository,
-    private val clientLocalRepository: ClientLocalRepository
 ) : BaseViewModel() {
 
     private val _clients = MutableLiveData<List<Client>>()
@@ -30,21 +32,17 @@ class QueryClientViewModel(
     fun fetchClients() {
         launch {
             val list = clientRepository.getClients()
-            _clients.postValue(getClientsFavorite(list))
+            _clients.postValue((list))
         }
     }
-    private fun getClientsFavorite(clientsList: List<Client>): List<Client> {
-        val favoriteList = clientLocalRepository.getAll()
+    private fun getClientsFavorite(clientsList: List<ClientEntity>) {
+        val clients : List<Client>
 
-        clientsList.forEach { client ->
-            favoriteList?.takeIf { it.isNotEmpty() }?.let { favoriteList ->
-                favoriteList.forEach { clientFavoriteList ->
-                    if (client.id == clientFavoriteList.id){
-                        client.isFavorite = true
-                    }
-                }}
+       clientsList.forEach { client ->
+           // clients[index] = client
         }
-        return clientsList
+
+        return
     }
 
 

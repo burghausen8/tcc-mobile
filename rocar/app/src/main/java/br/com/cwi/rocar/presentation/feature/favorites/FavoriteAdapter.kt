@@ -1,4 +1,4 @@
-package br.com.cwi.rocar.presentation.feature.initial.query.client
+package br.com.cwi.rocar.presentation.feature.favorites
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import br.com.cwi.rocar.R
 import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.feature.initial.viewholder.QueryClientViewHolder
 
-class QueryClientAdapter(
+class FavoriteAdapter(
     private val list: List<Client>,
     private val onClientClick: (Client) -> Unit,
     private val onFavoriteClick: (Client) -> Unit,

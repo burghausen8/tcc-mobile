@@ -10,7 +10,7 @@ import br.com.cwi.nespresso_app.data.database.entity.ClientEntity
 @Database(entities = [ClientEntity::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun getCoffeeDao(): ClientDao
+    abstract fun getClientDao(): ClientDao
 
     companion object {
         private const val DATABASE_NAME = "rocar-db"

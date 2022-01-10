@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_register_vehicle"
+    app:startDestination="@id/registerVehicleFragment">
+
+    <fragment
+        android:id="@+id/registerVehicleFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.register.vehicle.RegisterVehicleFragment"
+        android:label="fragment_register_vehicle"
+        tools:layout="@layout/fragment_register_vehicle" >
+        <action
+            android:id="@+id/action_registerVehicleFragment_to_registerVehicleDetailFragment"
+            app:destination="@id/registerVehicleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerVehicleDetailFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.register.vehicle.RegisterVehicleDetailFragment"
+        android:label="fragment_coffee_detail"
+        tools:layout="@layout/fragment_register_vehicle_detail" />
+
+</navigation>
