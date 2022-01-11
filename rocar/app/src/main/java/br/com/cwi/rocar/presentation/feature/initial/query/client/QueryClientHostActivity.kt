@@ -16,7 +16,7 @@ class QueryClientHostActivity : AppCompatActivity() {
 
     private val viewModel: QueryClientViewModel by viewModel()
 
-    private lateinit var binding : ActivityQueryClientHostBinding
+    private lateinit var binding: ActivityQueryClientHostBinding
 
     private val navController by lazy {
         (supportFragmentManager.findFragmentById(binding.navHostQueryClientContainer.id) as NavHostFragment)

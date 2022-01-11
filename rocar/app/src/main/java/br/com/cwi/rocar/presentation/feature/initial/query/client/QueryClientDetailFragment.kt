@@ -1,24 +1,22 @@
 package br.com.cwi.rocar.presentation.feature.initial.query.client
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.cwi.nespresso_app.data.network.RocarApi
 import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
 import br.com.cwi.rocar.databinding.FragmentQueryClientDetailBinding
-import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.extension.toPhoneFormat
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
- var EXTRA_QUERY_CLIENT_ID = 0
+var EXTRA_QUERY_CLIENT_ID = 0
 
-class QueryClientDetailFragment (): Fragment() {
+class QueryClientDetailFragment() : Fragment() {
 
     private lateinit var binding: FragmentQueryClientDetailBinding
 
@@ -32,7 +30,6 @@ class QueryClientDetailFragment (): Fragment() {
         return binding.root
     }
 
-
     private fun setupViewModel() {
         viewModel.clientsById.observe(viewLifecycleOwner) { client ->
             binding.tvNameValue.text = client.name
@@ -41,24 +38,43 @@ class QueryClientDetailFragment (): Fragment() {
             binding.tvNumberValue.text = client.nHome.toString()
             binding.tvCityValue.text = client.city
             binding.tvPhoneValue.text = toPhoneFormat(client.phone)
-
-
         }
         viewModel.getClientById(EXTRA_QUERY_CLIENT_ID)
 
+        binding.contentDelete.root.setOnClickListener {
+            alertDelete()
+        }
+    }
+    private fun alertDelete(){
+        val dialogBuilder = AlertDialog.Builder(binding.root.context)
+
+        dialogBuilder.setMessage("Você realmente deseja excluir?")
+            .setCancelable(false)
+            .setPositiveButton("Excluir", DialogInterface.OnClickListener {
+                    dialog, id -> deleteClient()
+            })
+            .setNegativeButton("Cancelar", DialogInterface.OnClickListener {
+                    dialog, id -> dialog.cancel()
+            })
+
+        val alert = dialogBuilder.create()
+        alert.show()
 
     }
+    private fun deleteClient(){
+        viewModel.deleteClient(EXTRA_QUERY_CLIENT_ID)
 
+        Toast.makeText(binding.root.context, "Cliente excluido!", Toast.LENGTH_LONG).show()
+
+        findNavController().navigate(
+            R.id.queryClientFragment
+        )
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
-
-
-
-
-
     }
-
 }

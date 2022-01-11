@@ -8,4 +8,7 @@
     <string name="txt_error_title">Opss, algo deu errado</string>
     <string name="txt_error_subtitle">Tente novamente mais tarde</string>
     <string name="pesquisar">pesquisar</string>
+    <string name="consulta">Consulta</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
 </resources>

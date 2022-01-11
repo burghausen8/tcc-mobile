@@ -1,8 +1,7 @@
 package br.com.cwi.nespresso_app.data.network.mapper
 
-import br.com.cwi.nespresso_app.data.network.entity.ClientResponse
-import br.com.cwi.nespresso_app.data.network.entity.VehicleResponse
 
+import br.com.cwi.nespresso_app.data.network.entity.VehicleResponse
 import br.com.cwi.rocar.domain.entity.Vehicle
 
 class VehicleMapper: DomainMapper<VehicleResponse, Vehicle> {
@@ -16,7 +15,6 @@ class VehicleMapper: DomainMapper<VehicleResponse, Vehicle> {
         board = from.board,
         color = from.color
     )
-
 
     override fun toDomain(from: List<VehicleResponse>) = from.map {
         toDomain(it)

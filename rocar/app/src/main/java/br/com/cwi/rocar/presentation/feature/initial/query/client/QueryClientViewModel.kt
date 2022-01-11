@@ -19,7 +19,6 @@ class QueryClientViewModel(
     private val _clientsById = MutableLiveData<Client>()
     val clientsById: LiveData<Client> = _clientsById
 
-
      fun getClientById(id :Int ){
          launch {
              val list = clientRepository.getClientById(id)
@@ -47,6 +46,12 @@ class QueryClientViewModel(
         return clientsList
     }
 
+    fun deleteClient(id : Int){
+        launch {
+            removeClientFavorite(id)
+            clientRepository.deleteClient(id)
+        }
+    }
 
     fun setFavorite(client: Client) {
         val clientEntity = client.toEntity()
@@ -54,5 +59,14 @@ class QueryClientViewModel(
         else clientLocalRepository.remove(clientEntity)
     }
 
-
+    private fun removeClientFavorite(id: Int){
+        val favoriteList = clientLocalRepository.getAll()
+        favoriteList?.takeIf { it.isNotEmpty() }?.let { favoriteList ->
+            favoriteList.forEach { clientFavorite ->
+                if (id == clientFavorite.id){
+                    clientLocalRepository.remove(clientFavorite)
+                }
+            }
+        }
+    }
 }

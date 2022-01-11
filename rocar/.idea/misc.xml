@@ -13,16 +13,21 @@
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/activity_register_client.xml" value="0.264" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/activity_register_vehicle_host.xml" value="0.25416666666666665" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_favorite.xml" value="0.1" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_favorite_detail.xml" value="0.1" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client.xml" value="0.1" />
-        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client_detail.xml" value="0.4" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client_detail.xml" value="0.2" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_vehicle.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_vehicle_detail.xml" value="0.264" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_register_vehicle.xml" value="0.25416666666666665" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_register_vehicle_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/item_favorite.xml" value="0.1" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/item_query_client.xml" value="0.6" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/item_query_vehicle.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_cadastrar_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_client_button.xml" value="0.20416666666666666" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_delete_button.xml" value="0.20416666666666666" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_edit_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_error.xml" value="0.2" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_favorites_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_initial_button.xml" value="0.20416666666666666" />

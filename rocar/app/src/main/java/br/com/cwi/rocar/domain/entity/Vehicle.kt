@@ -8,5 +8,4 @@ class Vehicle(
     var year: Int?,
     var board: String,
     var color: String?,
-
 )

@@ -2,7 +2,6 @@ package br.com.cwi.rocar.presentation.extension
 
 import java.lang.StringBuilder
 
-
 fun toPhoneFormat(phoneNumber: String?): String? {
     val sb = StringBuilder()
     if (phoneNumber == null){

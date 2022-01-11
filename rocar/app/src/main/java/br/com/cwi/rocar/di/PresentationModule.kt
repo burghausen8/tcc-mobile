@@ -14,8 +14,5 @@ val presentationModule = module {
     viewModel { QueryVehicleViewModel(get())}
     viewModel { RegisterClientViewModel(get())}
     viewModel { RegisterVehicleViewModel(get())}
-    viewModel { FavoriteViewModel(get(), get())}
-
-
-
+    viewModel { FavoriteViewModel(get())}
 }

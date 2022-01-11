@@ -16,13 +16,12 @@ class QueryVehicleAdapter(
 
         val view = inflateView(R.layout.item_query_vehicle, parent)
         return QueryVehicleViewHolder(view, onVehicleClick)
-
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = list[position]
 
-            (viewHolder as QueryVehicleViewHolder).bind(item)
+        (viewHolder as QueryVehicleViewHolder).bind(item)
     }
 
     override fun getItemCount() = list.size

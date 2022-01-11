@@ -16,7 +16,6 @@ class ClientMapper: DomainMapper<ClientResponse, Client> {
         phone = from.phone,
     )
 
-
     override fun toDomain(from: List<ClientResponse>) = from.map {
         toDomain(it)
     }

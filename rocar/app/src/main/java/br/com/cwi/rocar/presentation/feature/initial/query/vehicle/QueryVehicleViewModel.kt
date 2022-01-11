@@ -16,7 +16,6 @@ class QueryVehicleViewModel(
     private val _vehiclesById = MutableLiveData<Vehicle>()
     val vehiclesById: LiveData<Vehicle> = _vehiclesById
 
-
      fun getVehicleById(id :Int ){
          launch {
              val list = vehicleRepository.getVehicleById(id)
@@ -30,6 +29,4 @@ class QueryVehicleViewModel(
             _vehicle.postValue(list)
         }
     }
-
-
 }

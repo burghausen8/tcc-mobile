@@ -4,11 +4,10 @@ import com.squareup.moshi.Json
 
 class ClientResponse(
     @Json(name = "id") val id: Int,
-    @Json(name = "nome") val name: String,
+    @Json(name = "name") val name: String,
     @Json(name = "cpf") val cpf: String?,
-    @Json(name = "rua") val street: String?,
-    @Json(name = "nCasa") val nHome: String?,
-    @Json(name = "cidade") val city: String?,
-    @Json(name = "telefone") val phone: String?,
-
+    @Json(name = "street") val street: String?,
+    @Json(name = "nHome") val nHome: String?,
+    @Json(name = "city") val city: String?,
+    @Json(name = "phone") val phone: String?,
 )

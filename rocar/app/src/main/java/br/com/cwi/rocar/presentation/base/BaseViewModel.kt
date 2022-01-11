@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-abstract class BaseViewModel: ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> = _loading
@@ -25,10 +25,7 @@ abstract class BaseViewModel: ViewModel() {
             } catch (ex: Exception) {
                 _error.postValue(true)
             }
-
             _loading.postValue(false)
-
         }
     }
-
 }

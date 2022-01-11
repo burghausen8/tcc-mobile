@@ -3,6 +3,7 @@ package br.com.cwi.rocar.presentation.feature.initial.register.vehicle
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.domain.repository.ClientRepository
 import br.com.cwi.rocar.presentation.base.BaseViewModel
 import okhttp3.RequestBody
@@ -16,7 +17,6 @@ class RegisterVehicleViewModel(
 
     private val _clientsById = MutableLiveData<Client>()
     val clientsById: LiveData<Client> = _clientsById
-
 
      fun getClientById(id :Int ){
          launch {
@@ -32,13 +32,9 @@ class RegisterVehicleViewModel(
         }
     }
 
-    fun postVehicle( vehicle: RequestBody) {
+    fun postVehicle( vehicle: Vehicle) {
         launch {
             clientRepository.postVehicle(vehicle)
-
-
         }
     }
-
-
 }

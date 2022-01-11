@@ -1,6 +1,6 @@
 package br.com.cwi.rocar.domain.entity
 
-class Client(
+data class Client(
     var id: Int,
     var name: String,
     var cpf: String?,
@@ -9,5 +9,4 @@ class Client(
     var city: String?,
     var phone: String?,
     var isFavorite: Boolean = false
-
 )

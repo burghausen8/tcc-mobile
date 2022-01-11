@@ -1,6 +1,5 @@
 package br.com.cwi.rocar.presentation.feature.initial.query.client
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,15 +24,12 @@ class QueryClientFragment : Fragment() {
     ): View {
         binding = FragmentQueryClientBinding.inflate(layoutInflater)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
-
     }
 
     private fun setupViewModel() {
@@ -46,13 +42,13 @@ class QueryClientFragment : Fragment() {
 
     private fun setUpClientRecyclerView(list: List<Client>) {
 
-            binding.contentSearch.root.setOnClickListener{
+        binding.contentSearch.root.setOnClickListener {
             viewModel.clients.observe(viewLifecycleOwner) { listOriginal ->
                 var filter = binding.etSearch.text
-                var newList = listOriginal.filter {client -> client.name.contains(filter.toString())}
+                var newList =
+                    listOriginal.filter { client -> client.name.contains(filter.toString()) }
                 setUpClientRecyclerView(newList)
             }
-
         }
 
         binding.rvClients.apply {
@@ -60,13 +56,12 @@ class QueryClientFragment : Fragment() {
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             )
             adapter = QueryClientAdapter(list,
-            onClientClick = {
-                navigateToClientDetail(it.id)
-            },onFavoriteClick = {
-                    viewModel.setFavorite(it)})
+                onClientClick = {
+                    navigateToClientDetail(it.id)
+                }, onFavoriteClick = {
+                    viewModel.setFavorite(it)
+                })
         }
-
-
     }
 
     private fun navigateToClientDetail(id: Int) {

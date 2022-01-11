@@ -5,23 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.cwi.nespresso_app.data.network.RocarApi
-import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.FragmentQueryClientBinding
-import br.com.cwi.rocar.databinding.FragmentQueryClientDetailBinding
-import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.rocar.databinding.FragmentFavoriteDetailBinding
 import br.com.cwi.rocar.presentation.extension.toPhoneFormat
-import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
- var EXTRA_QUERY_CLIENT_ID = 0
+var EXTRA_QUERY_CLIENT_ID = 0
 
-class FavoriteDetailFragment (): Fragment() {
+class FavoriteDetailFragment() : Fragment() {
 
-    private lateinit var binding: FragmentQueryClientDetailBinding
+    private lateinit var binding: FragmentFavoriteDetailBinding
 
     private val viewModel: FavoriteViewModel by sharedViewModel()
 
@@ -29,25 +21,21 @@ class FavoriteDetailFragment (): Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentQueryClientDetailBinding.inflate(layoutInflater)
+        binding = FragmentFavoriteDetailBinding.inflate(layoutInflater)
         return binding.root
     }
 
 
     private fun setupViewModel() {
-        viewModel.clientsById.observe(viewLifecycleOwner) { client ->
+        viewModel.clientsFavoritesById.observe(viewLifecycleOwner) { client ->
             binding.tvNameValue.text = client.name
             binding.tvCpfValue.text = client.cpf
             binding.tvStreetValue.text = client.street
             binding.tvNumberValue.text = client.nHome.toString()
             binding.tvCityValue.text = client.city
             binding.tvPhoneValue.text = toPhoneFormat(client.phone)
-
-
         }
         viewModel.getClientById(EXTRA_QUERY_CLIENT_ID)
-
-
     }
 
 
@@ -55,11 +43,5 @@ class FavoriteDetailFragment (): Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
-
-
-
-
-
     }
-
 }

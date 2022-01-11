@@ -9,7 +9,6 @@ import br.com.cwi.rocar.databinding.ActivityRegisterClientBinding
 import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.extension.RandomNumberGenerator
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -18,7 +17,6 @@ import java.util.*
 class RegisterClientActivity : AppCompatActivity() {
 
     private val viewModel: RegisterClientViewModel by viewModel()
-
 
     private lateinit var binding: ActivityRegisterClientBinding
 
@@ -41,7 +39,6 @@ class RegisterClientActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setupRegisterCLient() {
 
         binding.contentRegister.root.setOnClickListener {
@@ -58,7 +55,7 @@ class RegisterClientActivity : AppCompatActivity() {
         }
     }
 
-    fun createCLientRequestBody(): RequestBody {
+    fun createCLientRequestBody(): Client {
         var client = Client(
             RandomNumberGenerator(),
             binding.tvNameValue.text.toString(),
@@ -68,7 +65,6 @@ class RegisterClientActivity : AppCompatActivity() {
             binding.tvCityValue.text.toString(),
             binding.tvPhoneValue.text.toString()
         )
-
 
         val jsonObject = JSONObject()
         jsonObject.put("id", client.id)
@@ -82,8 +78,6 @@ class RegisterClientActivity : AppCompatActivity() {
         val clientRequestBody =
             jsonObject.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
-        return clientRequestBody
-
+        return client
     }
-
 }

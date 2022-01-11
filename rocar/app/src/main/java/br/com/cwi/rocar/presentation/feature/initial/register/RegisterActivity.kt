@@ -3,10 +3,7 @@ package br.com.cwi.rocar.presentation.feature.initial.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.ActivityMainBinding
 import br.com.cwi.rocar.databinding.ActivityRegisterBinding
-import br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity
 import br.com.cwi.rocar.presentation.feature.initial.register.client.RegisterClientActivity
 import br.com.cwi.rocar.presentation.feature.initial.register.vehicle.RegisterVehicleHostActivity
 
@@ -18,6 +15,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setTitle("Cadastrar")
 
         setUpRegisterActions()
     }
@@ -32,6 +30,5 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterVehicleHostActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

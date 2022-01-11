@@ -24,15 +24,12 @@ class QueryVehicleFragment : Fragment() {
     ): View {
         binding = FragmentQueryVehicleBinding.inflate(layoutInflater)
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
-
     }
 
     private fun setupViewModel() {
@@ -48,10 +45,11 @@ class QueryVehicleFragment : Fragment() {
         binding.contentSearch.root.setOnClickListener {
             viewModel.vehicle.observe(viewLifecycleOwner) { listOriginal ->
                 var filter = binding.etSearch.text
-                var newList = listOriginal.filter {vehicle -> vehicle.board.contains(filter.toString()) || vehicle.model.contains(filter.toString()) }
+                var newList = listOriginal.filter { vehicle ->
+                    vehicle.board.contains(filter.toString()) || vehicle.model.contains(filter.toString())
+                }
                 setUpVehicleRecyclerView(newList)
             }
-
         }
 
         binding.rvVehicles.apply {
@@ -59,12 +57,10 @@ class QueryVehicleFragment : Fragment() {
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             )
             adapter = QueryVehicleAdapter(list,
-            onVehicleClick = {
-                navigateToVehicleDetail(it.id)
-            })
+                onVehicleClick = {
+                    navigateToVehicleDetail(it.id)
+                })
         }
-
-
     }
 
     private fun navigateToVehicleDetail(id: Int) {

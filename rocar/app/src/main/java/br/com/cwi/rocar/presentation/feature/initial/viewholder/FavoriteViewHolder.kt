@@ -2,17 +2,17 @@ package br.com.cwi.rocar.presentation.feature.initial.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import br.com.cwi.rocar.databinding.ItemQueryClientBinding
-import br.com.cwi.rocar.domain.entity.Client
+import br.com.cwi.nespresso_app.data.database.entity.ClientEntity
+import br.com.cwi.rocar.databinding.ItemFavoriteBinding
 
-class RegisterVehicleViewHolder(
+class FavoriteViewHolder(
     itemView: View,
-    private val onClientClick: (Client) -> Unit
+    private val onClientClick: (ClientEntity) -> Unit,
 ) : RecyclerView.ViewHolder(itemView) {
-    private val tvname = ItemQueryClientBinding.bind(itemView).tvName
-    private val tvstreet = ItemQueryClientBinding.bind(itemView).tvStreet
+    private val tvname = ItemFavoriteBinding.bind(itemView).tvName
+    private val tvstreet = ItemFavoriteBinding.bind(itemView).tvStreet
 
-    fun bind(item: Client) {
+    fun bind(item: ClientEntity) {
         tvname.text = item.name
         tvstreet.text = (item.street + ", " + item.nHome)
 

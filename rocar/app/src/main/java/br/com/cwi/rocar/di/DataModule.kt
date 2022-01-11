@@ -24,5 +24,4 @@ val dataModule = module {
     factory<ClientRepository> { ClientRepositoryImpl(get(), get()) }
     factory<VehicleRepository> { VehicleRepositoryImpl(get(), get()) }
     factory<ClientLocalRepository> { ClientLocalRepositoryImpl(get()) }
-
 }

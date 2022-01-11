@@ -17,13 +17,12 @@ class QueryClientAdapter(
 
         val view = inflateView(R.layout.item_query_client, parent)
         return QueryClientViewHolder(view, onClientClick, onFavoriteClick)
-
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = list[position]
 
-            (viewHolder as QueryClientViewHolder).bind(item)
+        (viewHolder as QueryClientViewHolder).bind(item)
     }
 
     override fun getItemCount() = list.size

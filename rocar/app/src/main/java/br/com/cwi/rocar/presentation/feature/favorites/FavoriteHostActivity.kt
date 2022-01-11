@@ -5,8 +5,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.ActivityQueryClientHostBinding
-import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
+import br.com.cwi.rocar.databinding.ActivityFavoriteHostBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val VIEW_CONTENT = 0
@@ -17,16 +16,16 @@ class FavoriteHostActivity : AppCompatActivity() {
 
     private val viewModel: FavoriteViewModel by viewModel()
 
-    private lateinit var binding : ActivityQueryClientHostBinding
+    private lateinit var binding: ActivityFavoriteHostBinding
 
     private val navController by lazy {
-        (supportFragmentManager.findFragmentById(binding.navHostQueryClientContainer.id) as NavHostFragment)
+        (supportFragmentManager.findFragmentById(binding.navHostFavoriteContainer.id) as NavHostFragment)
             .findNavController()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityQueryClientHostBinding.inflate(layoutInflater)
+        binding = ActivityFavoriteHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -37,7 +36,7 @@ class FavoriteHostActivity : AppCompatActivity() {
     private fun setupNavController() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val title = when (destination.id) {
-                R.id.queryClientFragment -> "Consulta de Clientes"
+                R.id.favoriteFragment -> "Favoritos"
                 else -> "Detalhes"
             }
             supportActionBar?.title = title
@@ -46,11 +45,11 @@ class FavoriteHostActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         viewModel.loading.observe(this) { isLoading ->
-            binding.vpQueryClient.displayedChild = if (isLoading) VIEW_LOADING else VIEW_CONTENT
+            binding.vpFavorite.displayedChild = if (isLoading) VIEW_LOADING else VIEW_CONTENT
         }
 
         viewModel.error.observe(this) { hasError ->
-            binding.vpQueryClient.displayedChild = if (hasError) VIEW_ERROR else VIEW_CONTENT
+            binding.vpFavorite.displayedChild = if (hasError) VIEW_ERROR else VIEW_CONTENT
         }
     }
 

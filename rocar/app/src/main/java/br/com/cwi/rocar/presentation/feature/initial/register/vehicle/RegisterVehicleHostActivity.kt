@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.ActivityQueryClientHostBinding
 import br.com.cwi.rocar.databinding.ActivityRegisterVehicleHostBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

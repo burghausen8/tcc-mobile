@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityQueryBinding
-import br.com.cwi.rocar.databinding.ActivityRegisterBinding
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientHostActivity
 import br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleHostActivity
 
@@ -17,6 +16,7 @@ class QueryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityQueryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setTitle("Consultar")
 
         setUpQueryActions()
     }

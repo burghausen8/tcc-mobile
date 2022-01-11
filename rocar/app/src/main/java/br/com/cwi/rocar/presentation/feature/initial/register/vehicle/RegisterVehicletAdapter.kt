@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.*
 import br.com.cwi.rocar.R
 import br.com.cwi.rocar.domain.entity.Client
-import br.com.cwi.rocar.presentation.feature.initial.viewholder.QueryClientViewHolder
 import br.com.cwi.rocar.presentation.feature.initial.viewholder.RegisterVehicleViewHolder
 
 class RegisterVehicletAdapter(
@@ -17,7 +16,6 @@ class RegisterVehicletAdapter(
 
         val view = inflateView(R.layout.item_query_client, parent)
         return RegisterVehicleViewHolder(view, onClientClick)
-
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {

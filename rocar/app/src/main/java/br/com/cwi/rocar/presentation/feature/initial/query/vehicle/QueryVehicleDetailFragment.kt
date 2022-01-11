@@ -10,9 +10,9 @@ import br.com.cwi.rocar.presentation.extension.toPhoneFormat
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
- var EXTRA_QUERY_VEHICLE_ID = 0
+var EXTRA_QUERY_VEHICLE_ID = 0
 
-class QueryVehicleDetailFragment (): Fragment() {
+class QueryVehicleDetailFragment() : Fragment() {
 
     private lateinit var binding: FragmentQueryVehicleDetailBinding
 
@@ -27,7 +27,6 @@ class QueryVehicleDetailFragment (): Fragment() {
         binding = FragmentQueryVehicleDetailBinding.inflate(layoutInflater)
         return binding.root
     }
-
 
     private fun setupViewModel() {
         viewModelVehicle.vehiclesById.observe(viewLifecycleOwner) { vehicle ->
@@ -46,25 +45,13 @@ class QueryVehicleDetailFragment (): Fragment() {
             binding.tvNumberValue.text = client.nHome.toString()
             binding.tvCityValue.text = client.city
             binding.tvPhoneValue.text = toPhoneFormat(client.phone)
-
-
         }
         viewModelVehicle.getVehicleById(EXTRA_QUERY_VEHICLE_ID)
-
-
-
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViewModel()
-
-
-
-
-
     }
-
 }
