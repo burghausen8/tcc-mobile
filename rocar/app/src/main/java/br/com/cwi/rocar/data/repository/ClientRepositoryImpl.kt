@@ -38,4 +38,8 @@ class ClientRepositoryImpl(
     override suspend fun deleteClient(id: Int) {
         api.deleteClient(id)
     }
+
+    override suspend fun setClient(client: Client, id: Int) {
+        api.setClient(client, id)
+    }
 }

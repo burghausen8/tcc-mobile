@@ -3,6 +3,7 @@ package br.com.cwi.rocar.data.repository
 
 import br.com.cwi.nespresso_app.data.network.RocarApi
 import br.com.cwi.nespresso_app.data.network.mapper.VehicleMapper
+import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.domain.repository.VehicleRepository
 import kotlinx.coroutines.Dispatchers
@@ -24,5 +25,13 @@ class VehicleRepositoryImpl(
         return withContext(Dispatchers.IO) {
             vehicleMapper.toDomain(api.getVehicleById(id))
         }
+    }
+
+    override suspend fun deleteVehicle(id: Int) {
+        api.deleteVehicle(id)
+    }
+
+    override suspend fun setVehicle(vehicle: Vehicle, id: Int) {
+        api.setVehicle(vehicle, id)
     }
 }

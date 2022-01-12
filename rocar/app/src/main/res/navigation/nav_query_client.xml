@@ -17,7 +17,16 @@
     <fragment
         android:id="@+id/queryClientDetailFragment"
         android:name="br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientDetailFragment"
-        android:label="fragment_coffee_detail"
-        tools:layout="@layout/fragment_query_client_detail" />
+        android:label="fragment_client_detail"
+        tools:layout="@layout/fragment_query_client_detail" >
+        <action
+            android:id="@+id/action_queryClientDetailFragment_to_queryClientEditFragment"
+            app:destination="@id/queryClientEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/queryClientEditFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientEditFragment"
+        android:label="fragment_client_edit"
+        tools:layout="@layout/fragment_query_client_edit" />
 
 </navigation>

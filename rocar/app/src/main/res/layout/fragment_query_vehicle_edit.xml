@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_light"
-    tools:context=".presentation.feature.initial.register.vehicle.RegisterVehicleDetailFragment">
+    tools:context=".presentation.feature.initial.query.vehicle.QueryVehicleEditFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_name"
@@ -36,6 +36,17 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_id_client_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="1dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_model"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_id_vehicle_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -196,15 +207,14 @@
         app:layout_constraintTop_toBottomOf="@id/tv_year" />
 
     <include
-        android:id="@+id/content_register"
-        layout="@layout/view_register_client_button"
+        android:id="@+id/content_save"
+        layout="@layout/view_save_button"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginVertical="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
 
     <include
         android:id="@+id/view_loading"

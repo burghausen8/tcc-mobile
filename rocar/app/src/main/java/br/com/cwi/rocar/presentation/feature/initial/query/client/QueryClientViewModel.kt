@@ -69,4 +69,10 @@ class QueryClientViewModel(
             }
         }
     }
+
+    fun setClient(client : Client) {
+        launch {
+            clientRepository.setClient(client, client.id)
+        }
+    }
 }

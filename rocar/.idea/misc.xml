@@ -17,8 +17,10 @@
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_favorite_detail.xml" value="0.1" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client.xml" value="0.1" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client_detail.xml" value="0.2" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_client_edit.xml" value="0.264" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_vehicle.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_vehicle_detail.xml" value="0.264" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_query_vehicle_edit.xml" value="0.17980072463768115" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_register_vehicle.xml" value="0.25416666666666665" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/fragment_register_vehicle_detail.xml" value="0.25416666666666665" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/item_favorite.xml" value="0.1" />
@@ -35,6 +37,7 @@
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_query_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_register_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_register_client_button.xml" value="0.1" />
+        <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_save_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_search_button.xml" value="0.20416666666666666" />
         <entry key="..\:/cwi/treinamento-mobile/tcc/tcc-mobile/rocar/app/src/main/res/layout/view_vehicle_button.xml" value="0.20416666666666666" />
       </map>

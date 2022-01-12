@@ -18,6 +18,15 @@
         android:id="@+id/queryVehicleDetailFragment"
         android:name="br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleDetailFragment"
         android:label="fragment_vehicle_detail"
-        tools:layout="@layout/fragment_query_vehicle_detail" />
+        tools:layout="@layout/fragment_query_vehicle_detail" >
+        <action
+            android:id="@+id/action_queryVehicleDetailFragment_to_queryVehicleEditFragment"
+            app:destination="@id/queryVehicleEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/queryVehicleEditFragment"
+        android:name="br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleEditFragment"
+        android:label="fragment_vehicle_edit"
+        tools:layout="@layout/fragment_query_vehicle_edit" />
 
 </navigation>

@@ -11,4 +11,5 @@ interface ClientRepository {
     suspend fun postClient(client : Client)
     suspend fun postVehicle( vehicle: Vehicle)
     suspend fun deleteClient(id : Int)
+    suspend fun setClient(client: Client, id: Int)
 }

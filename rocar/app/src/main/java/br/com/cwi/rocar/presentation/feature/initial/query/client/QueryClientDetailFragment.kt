@@ -44,6 +44,10 @@ class QueryClientDetailFragment() : Fragment() {
         binding.contentDelete.root.setOnClickListener {
             alertDelete()
         }
+
+        binding.contentEdit.root.setOnClickListener {
+            navigateToEditClient()
+        }
     }
     private fun alertDelete(){
         val dialogBuilder = AlertDialog.Builder(binding.root.context)
@@ -70,6 +74,12 @@ class QueryClientDetailFragment() : Fragment() {
             R.id.queryClientFragment
         )
 
+    }
+
+    private fun navigateToEditClient(){
+        findNavController().navigate(
+            R.id.queryClientEditFragment
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

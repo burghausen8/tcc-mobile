@@ -46,7 +46,7 @@ class RegisterClientActivity : AppCompatActivity() {
             if (binding.tvNameValue.text.toString().isEmpty()) {
                 Toast.makeText(applicationContext, "Nome obrigatório", Toast.LENGTH_LONG).show()
             } else {
-                    var client = createCLientRequestBody()
+                    var client = createCLient()
 
                     viewModel.postClient(client)
 
@@ -55,7 +55,7 @@ class RegisterClientActivity : AppCompatActivity() {
         }
     }
 
-    fun createCLientRequestBody(): Client {
+    private fun createCLient(): Client {
         var client = Client(
             RandomNumberGenerator(),
             binding.tvNameValue.text.toString(),
@@ -65,18 +65,6 @@ class RegisterClientActivity : AppCompatActivity() {
             binding.tvCityValue.text.toString(),
             binding.tvPhoneValue.text.toString()
         )
-
-        val jsonObject = JSONObject()
-        jsonObject.put("id", client.id)
-        jsonObject.put("nome", client.name)
-        jsonObject.put("cpf", client.cpf)
-        jsonObject.put("rua", client.street)
-        jsonObject.put("nCasa", client.nHome)
-        jsonObject.put("cidade", client.city)
-        jsonObject.put("telefone", client.phone)
-
-        val clientRequestBody =
-            jsonObject.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
         return client
     }
