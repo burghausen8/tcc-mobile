@@ -6,7 +6,6 @@ import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.domain.repository.ClientRepository
 import br.com.cwi.rocar.presentation.base.BaseViewModel
-import okhttp3.RequestBody
 
 class RegisterVehicleViewModel(
     private val clientRepository: ClientRepository
@@ -18,11 +17,11 @@ class RegisterVehicleViewModel(
     private val _clientsById = MutableLiveData<Client>()
     val clientsById: LiveData<Client> = _clientsById
 
-     fun getClientById(id :Int ){
-         launch {
-             val list = clientRepository.getClientById(id)
-             _clientsById.postValue(list)
-         }
+    fun getClientById(id: Int) {
+        launch {
+            val list = clientRepository.getClientById(id)
+            _clientsById.postValue(list)
+        }
     }
 
     fun fetchClients() {
@@ -32,7 +31,7 @@ class RegisterVehicleViewModel(
         }
     }
 
-    fun postVehicle( vehicle: Vehicle) {
+    fun postVehicle(vehicle: Vehicle) {
         launch {
             clientRepository.postVehicle(vehicle)
         }

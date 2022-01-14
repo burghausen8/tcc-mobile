@@ -2,7 +2,6 @@ package br.com.cwi.rocar.presentation.feature.initial.query.vehicle
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.domain.repository.VehicleRepository
 import br.com.cwi.rocar.presentation.base.BaseViewModel

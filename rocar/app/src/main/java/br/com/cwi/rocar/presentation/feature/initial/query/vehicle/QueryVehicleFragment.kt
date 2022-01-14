@@ -39,7 +39,6 @@ class QueryVehicleFragment : Fragment() {
         viewModel.fetchVehicles()
     }
 
-
     private fun setUpVehicleRecyclerView(list: List<Vehicle>) {
 
         binding.contentSearch.root.setOnClickListener {

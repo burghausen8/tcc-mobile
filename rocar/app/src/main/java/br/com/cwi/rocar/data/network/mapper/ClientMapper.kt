@@ -4,7 +4,7 @@ import br.com.cwi.nespresso_app.data.network.entity.ClientResponse
 
 import br.com.cwi.rocar.domain.entity.Client
 
-class ClientMapper: DomainMapper<ClientResponse, Client> {
+class ClientMapper : DomainMapper<ClientResponse, Client> {
 
     override fun toDomain(from: ClientResponse) = Client(
         id = from.id,

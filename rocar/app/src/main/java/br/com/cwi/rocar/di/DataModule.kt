@@ -18,7 +18,7 @@ val dataModule = module {
     single { RetrofitConfig.service }
 
     single { ClientMapper() }
-    single {VehicleMapper()}
+    single { VehicleMapper() }
     single { AppDatabase.create(androidApplication()) }
 
     factory<ClientRepository> { ClientRepositoryImpl(get(), get()) }

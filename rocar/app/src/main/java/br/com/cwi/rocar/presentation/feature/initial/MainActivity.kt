@@ -3,6 +3,7 @@ package br.com.cwi.rocar.presentation.feature.initial
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityMainBinding
 import br.com.cwi.rocar.presentation.feature.favorites.FavoriteHostActivity
 import br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         setUpInitialActions()
     }

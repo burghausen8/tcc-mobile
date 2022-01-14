@@ -7,7 +7,6 @@ import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.domain.repository.ClientRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okhttp3.RequestBody
 
 
 class ClientRepositoryImpl(

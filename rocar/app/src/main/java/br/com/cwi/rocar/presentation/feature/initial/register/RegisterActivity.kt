@@ -3,6 +3,7 @@ package br.com.cwi.rocar.presentation.feature.initial.register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityRegisterBinding
 import br.com.cwi.rocar.presentation.feature.initial.register.client.RegisterClientActivity
 import br.com.cwi.rocar.presentation.feature.initial.register.vehicle.RegisterVehicleHostActivity
@@ -16,6 +17,8 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setTitle("Cadastrar")
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setUpRegisterActions()
     }

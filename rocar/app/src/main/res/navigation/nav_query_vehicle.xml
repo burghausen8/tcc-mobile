@@ -9,20 +9,22 @@
         android:id="@+id/queryVehicleFragment"
         android:name="br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleFragment"
         android:label="fragment_query_vehicle"
-        tools:layout="@layout/fragment_query_vehicle" >
+        tools:layout="@layout/fragment_query_vehicle">
         <action
             android:id="@+id/action_queryVehicleFragment_to_queryVehicleDetailFragment"
             app:destination="@id/queryVehicleDetailFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/queryVehicleDetailFragment"
         android:name="br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleDetailFragment"
         android:label="fragment_vehicle_detail"
-        tools:layout="@layout/fragment_query_vehicle_detail" >
+        tools:layout="@layout/fragment_query_vehicle_detail">
         <action
             android:id="@+id/action_queryVehicleDetailFragment_to_queryVehicleEditFragment"
             app:destination="@id/queryVehicleEditFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/queryVehicleEditFragment"
         android:name="br.com.cwi.rocar.presentation.feature.initial.query.vehicle.QueryVehicleEditFragment"

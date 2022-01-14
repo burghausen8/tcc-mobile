@@ -16,28 +16,42 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".presentation.feature.initial.register.client.RegisterClientActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.register.RegisterActivity"/>
         <activity
             android:name=".presentation.feature.favorites.FavoriteHostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"/>
         <activity
             android:name=".presentation.feature.initial.query.client.QueryClientHostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity"/>
         <activity
             android:name=".presentation.feature.initial.register.vehicle.RegisterVehicleHostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.register.RegisterActivity"/>
         <activity
             android:name=".presentation.feature.initial.query.vehicle.QueryVehicleHostActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.query.QueryActivity"/>
         <activity
             android:name=".presentation.feature.initial.register.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.MainActivity"/>
         <activity
             android:name=".presentation.feature.initial.query.QueryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/customToolbar"
+            android:parentActivityName="br.com.cwi.rocar.presentation.feature.initial.MainActivity"/>
         <activity
             android:name=".presentation.feature.initial.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/customToolbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

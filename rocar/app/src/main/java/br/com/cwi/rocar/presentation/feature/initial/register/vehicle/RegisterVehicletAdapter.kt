@@ -21,7 +21,7 @@ class RegisterVehicletAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = list[position]
 
-            (viewHolder as RegisterVehicleViewHolder).bind(item)
+        (viewHolder as RegisterVehicleViewHolder).bind(item)
     }
 
     override fun getItemCount() = list.size

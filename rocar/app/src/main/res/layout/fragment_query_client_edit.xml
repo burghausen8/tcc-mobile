@@ -32,13 +32,13 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tv_name_value"
         android:layout_width="wrap_content"
-        android:background="@color/white"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5sp"
         android:layout_marginStart="5sp"
-        android:textColor="@color/black"
+        android:layout_marginBottom="5sp"
+        android:background="@color/white"
         android:inputType="textCapCharacters"
         android:minWidth="70dp"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@id/tv_cpf"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,13 +59,13 @@
         android:id="@+id/tv_cpf_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
         android:layout_marginBottom="5sp"
         android:background="@color/white"
         android:inputType="number"
+        android:minWidth="70dp"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:minWidth="70dp"
-        android:layout_marginStart="5sp"
         app:layout_constraintBottom_toTopOf="@id/tv_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cpf" />
@@ -97,14 +97,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
-        android:textColor="@color/black"
-        android:inputType="textCapCharacters"
         android:background="@color/white"
-        android:textSize="20dp"
+        android:inputType="textCapCharacters"
         android:minWidth="70dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_street"
-        app:layout_constraintBottom_toTopOf="@id/tv_number"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_street" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_number"
@@ -121,14 +121,14 @@
         android:id="@+id/tv_number_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5sp"
         android:background="@color/white"
         android:inputType="number"
-        android:layout_margin="5sp"
+        android:minWidth="70dp"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:minWidth="70dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tv_city"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_number" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -138,23 +138,23 @@
         android:layout_margin="5sp"
         android:text="Cidade: "
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_city_value"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_number_value"
-        app:layout_constraintBottom_toTopOf="@id/tv_city_value"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_number_value" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tv_city_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5sp"
         android:background="@color/white"
         android:inputType="textCapCharacters"
-        android:layout_margin="5sp"
+        android:minWidth="70dp"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:minWidth="70dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_city"
-        app:layout_constraintBottom_toTopOf="@id/tv_phone" />
+        app:layout_constraintTop_toBottomOf="@id/tv_city" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_phone"
@@ -164,17 +164,17 @@
         android:paddingTop="5dp"
         android:text="Telefone "
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_phone_value"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_city_value"
-        app:layout_constraintBottom_toTopOf="@id/tv_phone_value"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_city_value" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/tv_phone_value"
         android:layout_width="wrap_content"
-        android:background="@color/white"
-        android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
+        android:background="@color/white"
+        android:inputType="number"
         android:minWidth="70dp"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -189,7 +189,7 @@
         android:layout_marginVertical="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <include
@@ -213,7 +213,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

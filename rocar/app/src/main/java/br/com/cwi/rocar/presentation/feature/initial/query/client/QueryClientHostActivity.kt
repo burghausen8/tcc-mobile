@@ -27,6 +27,7 @@ class QueryClientHostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityQueryClientHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupViewModel()

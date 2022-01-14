@@ -19,8 +19,8 @@ class FavoriteAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        val item = list[position]
 
+        val item = list[position]
         (viewHolder as FavoriteViewHolder).bind(item)
     }
 

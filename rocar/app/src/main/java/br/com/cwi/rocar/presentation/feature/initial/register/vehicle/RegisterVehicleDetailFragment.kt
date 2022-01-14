@@ -9,15 +9,11 @@ import android.widget.Toast
 import br.com.cwi.rocar.databinding.FragmentRegisterVehicleDetailBinding
 import br.com.cwi.rocar.domain.entity.Vehicle
 import br.com.cwi.rocar.presentation.extension.RandomNumberGenerator
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
- var EXTRA_REGISTER_VEHICLE_ID = 0
+var EXTRA_REGISTER_VEHICLE_ID = 0
 
-class RegisterVehicleDetailFragment (): Fragment() {
+class RegisterVehicleDetailFragment() : Fragment() {
 
     private lateinit var binding: FragmentRegisterVehicleDetailBinding
 
@@ -45,13 +41,20 @@ class RegisterVehicleDetailFragment (): Fragment() {
 
         binding.contentRegister.root.setOnClickListener {
 
-            if (binding.tvModelValue.text.toString().isEmpty() || binding.tvBoardValue.text.toString().isEmpty()) {
-                Toast.makeText(binding.root.context, "Modelo e Placa obrigatórios!", Toast.LENGTH_LONG).show()
+            if (binding.tvModelValue.text.toString()
+                    .isEmpty() || binding.tvBoardValue.text.toString().isEmpty()
+            ) {
+                Toast.makeText(
+                    binding.root.context,
+                    "Modelo e Placa obrigatórios!",
+                    Toast.LENGTH_LONG
+                ).show()
             } else {
                 var vehicle = createVehicle()
 
                 viewModel.postVehicle(vehicle)
-                Toast.makeText(binding.root.context, "Cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+                Toast.makeText(binding.root.context, "Cadastrado com sucesso!", Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }

@@ -9,9 +9,9 @@ class RegisterClientViewModel(
     private val clientRepository: ClientRepository
 ) : BaseViewModel() {
 
-    fun postClient( client: Client) {
+    fun postClient(client: Client) {
         launch {
-           clientRepository.postClient(client)
+            clientRepository.postClient(client)
         }
     }
 }

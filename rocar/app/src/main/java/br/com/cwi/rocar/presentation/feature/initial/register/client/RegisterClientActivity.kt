@@ -1,16 +1,13 @@
 package br.com.cwi.rocar.presentation.feature.initial.register.client
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import br.com.cwi.nespresso_app.presentation.extension.visibleOrGone
+import br.com.cwi.rocar.R
 import br.com.cwi.rocar.databinding.ActivityRegisterClientBinding
 import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.presentation.extension.RandomNumberGenerator
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -24,6 +21,9 @@ class RegisterClientActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterClientBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setTitle("Cadastro Cliente")
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupViewModel()
         setupRegisterCLient()
@@ -46,11 +46,12 @@ class RegisterClientActivity : AppCompatActivity() {
             if (binding.tvNameValue.text.toString().isEmpty()) {
                 Toast.makeText(applicationContext, "Nome obrigatório", Toast.LENGTH_LONG).show()
             } else {
-                    var client = createCLient()
+                var client = createCLient()
 
-                    viewModel.postClient(client)
+                viewModel.postClient(client)
 
-                Toast.makeText(applicationContext, "Cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Cadastrado com sucesso!", Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }
@@ -65,7 +66,6 @@ class RegisterClientActivity : AppCompatActivity() {
             binding.tvCityValue.text.toString(),
             binding.tvPhoneValue.text.toString()
         )
-
         return client
     }
 }

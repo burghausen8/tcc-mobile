@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.feature.initial.query.vehicle.QueryVehicleDetailFragment">
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_vehicle"
         android:layout_width="wrap_content"
@@ -18,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_model"
@@ -32,7 +30,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_vehicle" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_model_value"
         android:layout_width="wrap_content"
@@ -45,7 +42,6 @@
         app:layout_constraintStart_toStartOf="@id/tv_model"
         app:layout_constraintTop_toBottomOf="@id/tv_model" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_year"
         android:layout_width="wrap_content"
@@ -57,7 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_model"
         app:layout_constraintTop_toBottomOf="@id/tv_vehicle" />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_year_value"
@@ -72,7 +67,6 @@
         app:layout_constraintStart_toStartOf="@id/tv_year"
         app:layout_constraintTop_toBottomOf="@id/tv_year" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_board"
         android:layout_width="wrap_content"
@@ -84,7 +78,6 @@
         app:layout_constraintEnd_toEndOf="@id/tv_model"
         app:layout_constraintStart_toStartOf="@id/tv_model"
         app:layout_constraintTop_toBottomOf="@id/tv_model_value" />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_board_value"
@@ -98,7 +91,6 @@
         app:layout_constraintEnd_toEndOf="@id/tv_board"
         app:layout_constraintStart_toStartOf="@id/tv_board"
         app:layout_constraintTop_toBottomOf="@id/tv_board" />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_color"
@@ -126,7 +118,6 @@
         app:layout_constraintStart_toStartOf="@id/tv_color"
         app:layout_constraintTop_toBottomOf="@id/tv_color" />
 
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_client"
         android:layout_width="wrap_content"
@@ -139,7 +130,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_board_value" />
-
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_name"
@@ -286,15 +276,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_phone" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_call"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_phone_value"
+        app:layout_constraintStart_toEndOf="@id/tv_phone_value"
+        app:layout_constraintTop_toTopOf="@id/tv_phone_value"
+        app:srcCompat="@drawable/whatsapp" />
+
     <include
         android:id="@+id/content_edit"
         layout="@layout/view_edit_button"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/content_delete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <include
         android:id="@+id/content_delete"
@@ -302,8 +303,8 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/content_edit"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/content_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

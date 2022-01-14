@@ -4,10 +4,8 @@ import java.lang.StringBuilder
 
 fun toPhoneFormat(phoneNumber: String?): String? {
     val sb = StringBuilder()
-    if (phoneNumber == null){
-
-    }
-    else {
+    if (phoneNumber == null) {
+    } else {
         if (phoneNumber.length >= 5 && phoneNumber.length < 9) {
             sb.append(phoneNumber.subSequence(0, 4))
             sb.append('-')

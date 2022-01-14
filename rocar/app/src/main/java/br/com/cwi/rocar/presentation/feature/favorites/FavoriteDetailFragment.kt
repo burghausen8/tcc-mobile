@@ -25,7 +25,6 @@ class FavoriteDetailFragment() : Fragment() {
         return binding.root
     }
 
-
     private fun setupViewModel() {
         viewModel.clientsFavoritesById.observe(viewLifecycleOwner) { client ->
             binding.tvNameValue.text = client.name
@@ -37,7 +36,6 @@ class FavoriteDetailFragment() : Fragment() {
         }
         viewModel.getClientById(EXTRA_QUERY_CLIENT_ID)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

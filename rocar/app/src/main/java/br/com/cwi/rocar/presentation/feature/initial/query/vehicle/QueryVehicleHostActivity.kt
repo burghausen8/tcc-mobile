@@ -16,7 +16,7 @@ class QueryVehicleHostActivity : AppCompatActivity() {
 
     private val viewModel: QueryVehicleViewModel by viewModel()
 
-    private lateinit var binding : ActivityQueryVehicleHostBinding
+    private lateinit var binding: ActivityQueryVehicleHostBinding
 
     private val navController by lazy {
         (supportFragmentManager.findFragmentById(binding.navHostQueryVehicleContainer.id) as NavHostFragment)
@@ -27,6 +27,7 @@ class QueryVehicleHostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityQueryVehicleHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupViewModel()

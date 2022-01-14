@@ -16,7 +16,7 @@ class RegisterVehicleHostActivity : AppCompatActivity() {
 
     private val viewModel: RegisterVehicleViewModel by viewModel()
 
-    private lateinit var binding : ActivityRegisterVehicleHostBinding
+    private lateinit var binding: ActivityRegisterVehicleHostBinding
 
     private val navController by lazy {
         (supportFragmentManager.findFragmentById(binding.navHostRegisterVehicleContainer.id) as NavHostFragment)
@@ -27,6 +27,7 @@ class RegisterVehicleHostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterVehicleHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setupViewModel()

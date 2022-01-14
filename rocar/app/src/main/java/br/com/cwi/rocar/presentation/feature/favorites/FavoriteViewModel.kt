@@ -16,7 +16,6 @@ class FavoriteViewModel(
     private val _clientsFavoritesById = MutableLiveData<ClientEntity>()
     val clientsFavoritesById: LiveData<ClientEntity> = _clientsFavoritesById
 
-
     fun getClientById(id: Int) {
         launch {
             val list = clientLocalRepository.getAll()

@@ -2,7 +2,6 @@ package br.com.cwi.rocar.presentation.feature.initial.query.vehicle
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,19 +10,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import br.com.cwi.rocar.R
-import br.com.cwi.rocar.databinding.FragmentQueryVehicleDetailBinding
 import br.com.cwi.rocar.databinding.FragmentQueryVehicleEditBinding
-import br.com.cwi.rocar.domain.entity.Client
 import br.com.cwi.rocar.domain.entity.Vehicle
-import br.com.cwi.rocar.presentation.extension.toPhoneFormat
-import br.com.cwi.rocar.presentation.feature.initial.query.client.EXTRA_QUERY_CLIENT_ID
 import br.com.cwi.rocar.presentation.feature.initial.query.client.QueryClientViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import android.widget.ArrayAdapter
-
-
-
-
+import android.widget.ListView
 
 class QueryVehicleEditFragment() : Fragment() {
 
@@ -52,7 +44,6 @@ class QueryVehicleEditFragment() : Fragment() {
             binding.tvColorValue.setText(vehicle.color)
 
             viewModelClient.getClientById(vehicle.idProp)
-
         }
 
         viewModelClient.clientsById.observe(viewLifecycleOwner) { client ->
@@ -67,6 +58,23 @@ class QueryVehicleEditFragment() : Fragment() {
 
         binding.tvNameValue.setOnClickListener {
 
+            val builder = AlertDialog.Builder(binding.root.context)
+            builder.setTitle("Selecione o propietario")
+
+            val modeList = ListView(binding.root.context)
+            val stringArray = arrayOf("João", "Casimiro")
+            val modeAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
+                binding.root.context,
+                android.R.layout.simple_list_item_1,
+                android.R.id.text1,
+                stringArray
+            )
+            modeList.setAdapter(modeAdapter)
+
+            builder.setView(modeList)
+            val dialog: Dialog = builder.create()
+
+            dialog.show()
         }
     }
 
@@ -78,7 +86,6 @@ class QueryVehicleEditFragment() : Fragment() {
         Toast.makeText(binding.root.context, "Alterações salvas", Toast.LENGTH_LONG).show()
 
         navigateToVehicleDetail()
-
     }
 
     private fun createVehicle(): Vehicle {

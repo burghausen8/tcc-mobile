@@ -21,8 +21,8 @@
         android:id="@+id/tv_name_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5sp"
         android:layout_marginStart="5sp"
+        android:layout_marginBottom="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@id/tv_cpf"
@@ -44,10 +44,10 @@
         android:id="@+id/tv_cpf_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5sp"
         android:layout_marginBottom="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:layout_marginStart="5sp"
         app:layout_constraintBottom_toTopOf="@id/tv_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_cpf" />
@@ -82,9 +82,9 @@
         android:layout_margin="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_street"
         app:layout_constraintStart_toEndOf="@id/tv_street"
-        app:layout_constraintTop_toTopOf="@id/tv_street"
-        app:layout_constraintBottom_toBottomOf="@id/tv_street"/>
+        app:layout_constraintTop_toTopOf="@id/tv_street" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_number"
@@ -105,8 +105,8 @@
         android:layout_margin="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@id/tv_number"
         app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintStart_toEndOf="@id/tv_number"
         app:layout_constraintTop_toTopOf="@id/tv_number" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -126,9 +126,9 @@
         android:layout_margin="5sp"
         android:textColor="@color/black"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_city"
         app:layout_constraintStart_toEndOf="@id/tv_city"
-        app:layout_constraintTop_toTopOf="@id/tv_city"
-        app:layout_constraintBottom_toBottomOf="@id/tv_city" />
+        app:layout_constraintTop_toTopOf="@id/tv_city" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_phone"
@@ -151,15 +151,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_phone" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_call"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_phone_value"
+        app:layout_constraintStart_toEndOf="@id/tv_phone_value"
+        app:layout_constraintTop_toTopOf="@id/tv_phone_value"
+        app:srcCompat="@drawable/whatsapp" />
+
     <include
         android:id="@+id/content_edit"
         layout="@layout/view_edit_button"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/content_delete"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <include
         android:id="@+id/content_delete"
@@ -167,9 +178,8 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/content_edit"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
+        app:layout_constraintStart_toEndOf="@id/content_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

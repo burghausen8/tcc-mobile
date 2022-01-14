@@ -1,6 +1,5 @@
 package br.com.cwi.rocar.presentation.feature.favorites
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,7 +38,6 @@ class FavoriteFragment : Fragment() {
         }
         viewModel.fetchClients()
     }
-
 
     private fun setUpClientRecyclerView(list: List<ClientEntity>) {
 

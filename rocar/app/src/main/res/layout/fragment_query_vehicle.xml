@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/content_search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_vehicles"></androidx.appcompat.widget.AppCompatEditText>
+        app:layout_constraintTop_toBottomOf="@id/rv_vehicles" />
 
     <include
         android:id="@+id/content_search"
@@ -38,6 +38,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/et_search"
         app:layout_constraintTop_toBottomOf="@id/rv_vehicles" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

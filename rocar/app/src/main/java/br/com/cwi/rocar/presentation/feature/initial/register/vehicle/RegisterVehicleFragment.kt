@@ -40,13 +40,13 @@ class RegisterVehicleFragment : Fragment() {
         viewModel.fetchClients()
     }
 
-
     private fun setUpClientRecyclerView(list: List<Client>) {
 
-            binding.contentSearch.root.setOnClickListener{
+        binding.contentSearch.root.setOnClickListener {
             viewModel.clients.observe(viewLifecycleOwner) { listOriginal ->
                 var filter = binding.etSearch.text
-                var newList = listOriginal.filter {client -> client.name.contains(filter.toString())}
+                var newList =
+                    listOriginal.filter { client -> client.name.contains(filter.toString()) }
                 setUpClientRecyclerView(newList)
             }
         }
@@ -56,9 +56,9 @@ class RegisterVehicleFragment : Fragment() {
                 DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
             )
             adapter = RegisterVehicletAdapter(list,
-            onClientClick = {
-                navigateToClientDetail(it.id)
-            })
+                onClientClick = {
+                    navigateToClientDetail(it.id)
+                })
         }
     }
 

@@ -17,6 +17,8 @@ class QueryActivity : AppCompatActivity() {
         binding = ActivityQueryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setTitle("Consultar")
+        setSupportActionBar(binding.root.findViewById(R.id.toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         setUpQueryActions()
     }
@@ -28,8 +30,8 @@ class QueryActivity : AppCompatActivity() {
         }
 
         binding.contentVehicle.root.setOnClickListener {
-              val intent = Intent(this, QueryVehicleHostActivity::class.java)
-              startActivity(intent)
+            val intent = Intent(this, QueryVehicleHostActivity::class.java)
+            startActivity(intent)
         }
 
     }
